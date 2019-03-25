@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WebApplication2.Domain;
+﻿using GraphQL.Conventions.Sample.Domain;
+using Microsoft.EntityFrameworkCore;
 
-namespace WebApplication2.Infrastructure
+namespace GraphQL.Conventions.Sample.Infrastructure
 {
     public class LuminaryTalkDbContext:DbContext
     {

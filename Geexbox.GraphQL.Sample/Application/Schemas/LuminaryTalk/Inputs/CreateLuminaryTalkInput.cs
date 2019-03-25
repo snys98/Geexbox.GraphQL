@@ -1,8 +1,7 @@
 ﻿using System;
-using GraphQL.Conventions;
 using GraphQL.Conventions.Relay;
 
-namespace WebApplication2.Application.Schemas.LuminaryTalk.Inputs
+namespace GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk.Inputs
 {
 
     public class CreateLuminaryTalkInput:IRelayMutationInputObject

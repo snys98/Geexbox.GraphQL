@@ -1,4 +1,4 @@
-﻿namespace WebApplication2.Domain
+﻿namespace GraphQL.Conventions.Sample.Domain
 {
     public class LuminaryTalk
     {

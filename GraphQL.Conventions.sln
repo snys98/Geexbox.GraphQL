@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28705.295
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Conventions.Sample", "GraphQL.Conventions.Sample.csproj", "{7CA3625D-EE3A-410C-8F05-BF7E86937064}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Conventions", "submodules\conventions\src\GraphQL.Conventions\GraphQL.Conventions.csproj", "{AC4E7040-C045-4056-9E25-073C06557438}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microex.All", "submodules\Microex.All\Microex.All\Microex.All.csproj", "{5B90E6E8-70CF-4A1C-975D-E5A2D161BBF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Conventions.Tests", "submodules\conventions\src\GraphQL.Conventions.Tests\GraphQL.Conventions.Tests.csproj", "{CC9C6C9D-C30A-4FB3-82A8-1D82AFC942B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Conventions.Sample", "Geexbox.GraphQL.Sample\GraphQL.Conventions.Sample.csproj", "{622A83E1-1B4B-41BE-B5E0-F4742F46FDC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Conventions", "submodules\conventions\src\GraphQL.Conventions\GraphQL.Conventions.csproj", "{972EF55B-BAE9-4D4D-80FB-8E03A7A731DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CA3625D-EE3A-410C-8F05-BF7E86937064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CA3625D-EE3A-410C-8F05-BF7E86937064}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CA3625D-EE3A-410C-8F05-BF7E86937064}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CA3625D-EE3A-410C-8F05-BF7E86937064}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC4E7040-C045-4056-9E25-073C06557438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC4E7040-C045-4056-9E25-073C06557438}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC4E7040-C045-4056-9E25-073C06557438}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC4E7040-C045-4056-9E25-073C06557438}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B90E6E8-70CF-4A1C-975D-E5A2D161BBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B90E6E8-70CF-4A1C-975D-E5A2D161BBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B90E6E8-70CF-4A1C-975D-E5A2D161BBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B90E6E8-70CF-4A1C-975D-E5A2D161BBF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC9C6C9D-C30A-4FB3-82A8-1D82AFC942B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC9C6C9D-C30A-4FB3-82A8-1D82AFC942B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC9C6C9D-C30A-4FB3-82A8-1D82AFC942B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC9C6C9D-C30A-4FB3-82A8-1D82AFC942B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622A83E1-1B4B-41BE-B5E0-F4742F46FDC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622A83E1-1B4B-41BE-B5E0-F4742F46FDC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622A83E1-1B4B-41BE-B5E0-F4742F46FDC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622A83E1-1B4B-41BE-B5E0-F4742F46FDC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{972EF55B-BAE9-4D4D-80FB-8E03A7A731DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972EF55B-BAE9-4D4D-80FB-8E03A7A731DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972EF55B-BAE9-4D4D-80FB-8E03A7A731DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972EF55B-BAE9-4D4D-80FB-8E03A7A731DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

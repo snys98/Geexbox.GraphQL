@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace WebApplication2.Migrations
+namespace GraphQL.Conventions.Sample.Migrations
 {
     public partial class init : Migration
     {

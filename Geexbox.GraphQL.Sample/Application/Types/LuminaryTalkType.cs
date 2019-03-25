@@ -1,7 +1,7 @@
-﻿using GraphQL.Types;
-using WebApplication2.Domain;
+﻿using GraphQL.Conventions.Sample.Domain;
+using GraphQL.Types;
 
-namespace WebApplication2.Application.Types
+namespace GraphQL.Conventions.Sample.Application.Types
 {
     public class LuminaryTalkType : ObjectGraphType<LuminaryTalk>
     {

@@ -1,12 +1,11 @@
 ﻿using System.Threading.Tasks;
-using AutoMapper;
 using GraphQL.Conventions.Relay;
+using GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk.Inputs;
+using GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk.Outputs;
+using GraphQL.Conventions.Sample.Infrastructure;
 using Microex.All.Common;
-using WebApplication2.Application.Schemas.LuminaryTalk.Inputs;
-using WebApplication2.Application.Schemas.LuminaryTalk.Outputs;
-using WebApplication2.Infrastructure;
 
-namespace WebApplication2.Application.Schemas.LuminaryTalk
+namespace GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk
 {
     [ImplementViewer(OperationType.Mutation)]
     public class LuminaryTalkMutation

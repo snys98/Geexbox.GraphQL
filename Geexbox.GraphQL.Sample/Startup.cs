@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GraphQL.Conventions;
+﻿using System.Linq;
 using GraphQL.Conventions.Adapters;
 using GraphQL.Conventions.Builders;
-using GraphQL.Conventions.Web;
+using GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk;
+using GraphQL.Conventions.Sample.Infrastructure;
 using GraphQL.Server;
 using GraphQL.Server.Ui.GraphiQL;
 using GraphQL.Server.Ui.Playground;
@@ -13,13 +10,9 @@ using GraphQL.Server.Ui.Voyager;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using WebApplication2.Application;
-using WebApplication2.Application.Schemas.LuminaryTalk;
-using WebApplication2.Infrastructure;
 
-namespace WebApplication2
+namespace GraphQL.Conventions.Sample
 {
     public class Startup
     {
@@ -38,14 +31,14 @@ namespace WebApplication2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            foreach (var graphType in typeof(Startup).Assembly.ExportedTypes.Where(x => typeof(IObjectGraphType).IsAssignableFrom(x)))
+            services.AddScoped<LuminaryTalkDbContext>();
+            services.AddSingleton(s =>
             {
-                services.AddScoped(graphType);
-            }
-            var typeAdapter = new GraphTypeAdapter();
-            var constructor = new SchemaConstructor<ISchema, IGraphType>(typeAdapter);
-            var schema = constructor.Build(typeof(SchemaDefinition<LuminaryTalkQuery, LuminaryTalkMutation, LuminaryTalkSubscription>));
-            services.AddSingleton(_ => schema);
+                var typeAdapter = new GraphTypeAdapter();
+                var constructor = new SchemaConstructor<ISchema, IGraphType>(typeAdapter);
+                var schema = constructor.Build(typeof(SchemaDefinition<LuminaryTalkQuery, LuminaryTalkMutation, LuminaryTalkSubscription>));
+                return schema;
+            });
             services.AddGraphQL(options =>
                 {
                     options.EnableMetrics = true;
