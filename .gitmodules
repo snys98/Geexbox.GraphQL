@@ -1,0 +1,12 @@
+[submodule "submodules/server"]
+	path = submodules/server
+	url = https://github.com/snys98/server.git
+	branch = develop
+[submodule "submodules/conventions"]
+	path = submodules/conventions
+	url = https://github.com/snys98/conventions.git
+	branch = master
+[submodule "submodules/Microex.All"]
+	path = submodules/Microex.All
+	url = https://github.com/snys98/Microex.All.git
+	branch = master
