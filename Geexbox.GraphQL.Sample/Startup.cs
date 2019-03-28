@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using GraphQL.Conventions.Adapters;
 using GraphQL.Conventions.Builders;
+using GraphQL.Conventions.Extensions;
 using GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk;
 using GraphQL.Conventions.Sample.Infrastructure;
 using GraphQL.Server;
@@ -32,18 +34,14 @@ namespace GraphQL.Conventions.Sample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<LuminaryTalkDbContext>();
-            services.AddSingleton(s =>
-            {
-                var typeAdapter = new GraphTypeAdapter();
-                var constructor = new SchemaConstructor<ISchema, IGraphType>(typeAdapter);
-                var schema = constructor.Build(typeof(SchemaDefinition<LuminaryTalkQuery, LuminaryTalkMutation, LuminaryTalkSubscription>));
-                return schema;
-            });
+            services.AddGraphQLSchema<SchemaDefinition<LuminaryTalkQuery, LuminaryTalkMutation, LuminaryTalkSubscription>>();
             services.AddGraphQL(options =>
                 {
                     options.EnableMetrics = true;
                     options.ExposeExceptions = this.Environment.IsDevelopment();
                 })
+                .AddUserContextBuilder<IServiceProvider>(x=> x.RequestServices)
+                .AddRelayGraphTypes()
                 .AddWebSockets() // Add required services for web socket support
                 .AddDataLoader(); // Add required services for DataLoader support
         }
