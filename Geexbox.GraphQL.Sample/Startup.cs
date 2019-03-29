@@ -2,6 +2,7 @@
 using System.Linq;
 using GraphQL.Conventions.Adapters;
 using GraphQL.Conventions.Builders;
+using GraphQL.Conventions.Execution;
 using GraphQL.Conventions.Extensions;
 using GraphQL.Conventions.Sample.Application.Schemas.LuminaryTalk;
 using GraphQL.Conventions.Sample.Infrastructure;
@@ -33,14 +34,14 @@ namespace GraphQL.Conventions.Sample
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<LuminaryTalkDbContext>();
+            services.AddDbContext<LuminaryTalkDbContext>();
             services.AddGraphQLSchema<SchemaDefinition<LuminaryTalkQuery, LuminaryTalkMutation, LuminaryTalkSubscription>>();
             services.AddGraphQL(options =>
                 {
                     options.EnableMetrics = true;
                     options.ExposeExceptions = this.Environment.IsDevelopment();
                 })
-                .AddUserContextBuilder<IServiceProvider>(x=> x.RequestServices)
+                .AddUserContextBuilder(x=> UserContextWrapper.Create(null, x.RequestServices))
                 .AddRelayGraphTypes()
                 .AddWebSockets() // Add required services for web socket support
                 .AddDataLoader(); // Add required services for DataLoader support
